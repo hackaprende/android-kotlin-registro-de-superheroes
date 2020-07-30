@@ -37,7 +37,7 @@
                     android:layout_height="100dp"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
-                    tools:src="@tools:sample/backgrounds/scenic" />
+                    android:src="@android:drawable/ic_menu_camera"/>
 
                 <EditText
                     android:id="@+id/superhero_name_edit"
