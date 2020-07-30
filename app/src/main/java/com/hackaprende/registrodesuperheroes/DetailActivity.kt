@@ -6,10 +6,7 @@ import com.hackaprende.registrodesuperheroes.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
     companion object {
-        const val HERO_NAME_KEY = "hero_name"
-        const val ALTER_EGO_KEY = "alter_ego"
-        const val BIO_KEY = "bio"
-        const val POWER_KEY = "power"
+        const val HERO_KEY = "hero"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,14 +15,11 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val extras = intent.extras!!
-        val heroName = extras.getString(HERO_NAME_KEY) ?: ""
-        val alterEgo = extras.getString(ALTER_EGO_KEY) ?: ""
-        val bio = extras.getString(BIO_KEY) ?: ""
-        val power = extras.getFloat(POWER_KEY)
+        val hero = extras.getParcelable<Hero>(HERO_KEY)!!
 
-        binding.heroNameText.text = heroName
-        binding.alterEgoText.text = alterEgo
-        binding.bioText.text = bio
-        binding.powerBar.rating = power
+        binding.heroNameText.text = hero.name
+        binding.alterEgoText.text = hero.alterEgo
+        binding.bioText.text = hero.bio
+        binding.powerBar.rating = hero.power
     }
 }
