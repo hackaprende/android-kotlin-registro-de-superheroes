@@ -3,7 +3,6 @@
     <string name="app_name">Registro de superheroes</string>
     <string name="save">Guardar</string>
     <string name="superhero_name">Nombre</string>
-    <string name="real_name">Nombre real</string>
     <string name="bio">Bio</string>
     <string name="bio_hint">Breve biografía del personaje</string>
     <string name="power">Poder</string>

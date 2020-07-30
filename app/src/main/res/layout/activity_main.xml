@@ -29,8 +29,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:orientation="vertical">
 
                 <ImageView
                     android:id="@+id/superhero_image"
@@ -50,13 +49,13 @@
                     android:hint="@string/superhero_name" />
 
                 <EditText
-                    android:id="@+id/real_name"
+                    android:id="@+id/alter_ego"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@id/superhero_image"
                     android:layout_marginStart="16dp"
                     android:layout_toEndOf="@id/superhero_image"
-                    android:hint="@string/real_name" />
+                    android:hint="@string/alter_ego" />
 
                 <View
                     android:id="@+id/divider"
