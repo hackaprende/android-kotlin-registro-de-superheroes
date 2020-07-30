@@ -29,7 +29,7 @@ git clone https://github.com/hackaprende/android-kotlin-registro-de-superheroes.
 ```
 También puedes descargarla como Zip
 
-**Paso 2: Has checkout al branch ‘starter’ **
+**Paso 2: Has checkout al branch ‘starter’**
 
 El proyecto tiene dos branches: starter es para que tú mismo(a) desarrolles la app y master es la app ya terminada, para
 trabajar con uno u otro escribe lo siguiente en la terminal
