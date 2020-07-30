@@ -13,6 +13,7 @@ private const val PHOTO_REQUEST_CODE = 2000
 
 class MainActivity : AppCompatActivity() {
     private lateinit var superheroImage: ImageView
+    private var heroBitmap: Bitmap? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +43,7 @@ class MainActivity : AppCompatActivity() {
     private fun openDetailsActivity(hero: Hero) {
         val intent = Intent(this, DetailActivity::class.java)
         intent.putExtra(DetailActivity.HERO_KEY, hero)
+        intent.putExtra(DetailActivity.HERO_BITMAP_KEY, heroBitmap)
         startActivity(intent)
     }
 
@@ -50,8 +52,8 @@ class MainActivity : AppCompatActivity() {
 
         if (resultCode == Activity.RESULT_OK && requestCode == PHOTO_REQUEST_CODE) {
             val extras = data?.extras
-            val bitmap = extras?.get("data") as Bitmap
-            superheroImage.setImageBitmap(bitmap)
+            heroBitmap = extras?.get("data") as Bitmap
+            superheroImage.setImageBitmap(heroBitmap!!)
         }
     }
 }
