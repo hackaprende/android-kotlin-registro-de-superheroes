@@ -14,12 +14,13 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="240dp"
+            android:layout_height="200dp"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
             tools:src="@tools:sample/backgrounds/scenic" />
 
         <TextView
+            android:id="@+id/hero_name_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="16dp"
@@ -36,6 +37,7 @@
             android:textColor="#373131" />
 
         <TextView
+            android:id="@+id/alter_ego_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="16dp"
@@ -54,13 +56,14 @@
             android:textColor="#373131" />
 
         <TextView
+            android:id="@+id/bio_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"
             android:textColor="@android:color/black"
             android:textSize="20sp"
-            tools:text="Tony Stark" />
+            tools:text="Genius, millionaire, playboy, philanthropist." />
 
         <TextView
             android:layout_width="match_parent"
@@ -77,6 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:isIndicator="true"
             android:progressTint="@android:color/holo_orange_light"
             tools:rating="4" />
     </LinearLayout>

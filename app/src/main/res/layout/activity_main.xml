@@ -40,7 +40,7 @@
                     tools:src="@tools:sample/backgrounds/scenic" />
 
                 <EditText
-                    android:id="@+id/superhero_name"
+                    android:id="@+id/superhero_name_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignTop="@id/superhero_image"
@@ -49,7 +49,7 @@
                     android:hint="@string/superhero_name" />
 
                 <EditText
-                    android:id="@+id/alter_ego"
+                    android:id="@+id/alter_ego_edit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@id/superhero_image"
