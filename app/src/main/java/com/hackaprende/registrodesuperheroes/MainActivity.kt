@@ -1,19 +1,23 @@
 package com.hackaprende.registrodesuperheroes
 
-import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.MediaStore
 import android.widget.ImageView
 import com.hackaprende.registrodesuperheroes.databinding.ActivityMainBinding
 
-private const val PHOTO_REQUEST_CODE = 2000
+import androidx.activity.result.contract.ActivityResultContracts
 
 class MainActivity : AppCompatActivity() {
     private lateinit var superheroImage: ImageView
     private var heroBitmap: Bitmap? = null
+
+    private val getContent = registerForActivityResult(ActivityResultContracts.TakePicturePreview()) {
+            bitmap ->
+        heroBitmap = bitmap
+        superheroImage.setImageBitmap(heroBitmap)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,8 +40,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun openCamera() {
-        val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        startActivityForResult(cameraIntent, PHOTO_REQUEST_CODE)
+        getContent.launch(null)
     }
 
     private fun openDetailsActivity(hero: Hero) {
@@ -45,15 +48,5 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra(DetailActivity.HERO_KEY, hero)
         intent.putExtra(DetailActivity.HERO_BITMAP_KEY, heroBitmap)
         startActivity(intent)
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (resultCode == Activity.RESULT_OK && requestCode == PHOTO_REQUEST_CODE) {
-            val extras = data?.extras
-            heroBitmap = extras?.get("data") as Bitmap
-            superheroImage.setImageBitmap(heroBitmap!!)
-        }
     }
 }
