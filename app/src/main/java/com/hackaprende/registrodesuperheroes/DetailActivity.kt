@@ -1,8 +1,8 @@
 package com.hackaprende.registrodesuperheroes
 
-import android.graphics.Bitmap
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.BitmapFactory
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.hackaprende.registrodesuperheroes.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
@@ -19,7 +19,9 @@ class DetailActivity : AppCompatActivity() {
         val extras = intent.extras!!
         val hero = extras.getParcelable<Hero>(HERO_KEY)!!
         binding.hero = hero
-        val bitmap = extras.getParcelable<Bitmap>(HERO_BITMAP_KEY)
+        val imagePath = extras.getString(HERO_BITMAP_KEY)
+
+        val bitmap = BitmapFactory.decodeFile(imagePath)
 
         if (bitmap != null) {
             binding.heroImage.setImageBitmap(bitmap)
